@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { useRecoilState, useRecoilValue } from "recoil";
+import { useRecoilState } from "recoil";
 import styled from "styled-components";
-import { openMenu } from "../recoil/atoms";
+import { openModelMenu } from "../recoil/atoms";
 import { FaChevronRight, FaChevronLeft } from "react-icons/fa";
 import g70Sho from "../images/menu-g70-shooting.webp";
 import g70 from "../images/menu-g70.webp";
@@ -21,7 +21,7 @@ const MenuSlide = () => {
   const navigate = useNavigate();  
 //   const menuSlide = useRecoilValue(openMenu);
 
-  const [menuSlide, setMenuSlide] = useRecoilState(openMenu);
+  const [menuSlide, setMenuSlide] = useRecoilState(openModelMenu);
   const [isNext, setIsNext] = useState(false);
 
   const [isAll, setIsAll] = useState(true);
@@ -117,17 +117,15 @@ const MenuSlide = () => {
       setIsAll(false);
       setIsSedan(false);
       setIsSuv(true);
-    }
+    };
   };
   const handleCarClick = (e) => {
-    // console.log(e);
-    // console.log(e.target.parentElement.firstChild.children[0].innerHTML === "GV80");
     if(e.target.parentElement.firstChild.children[0].innerHTML === "GV80"){
-        // setMenuSlide(false);
+        setMenuSlide(false);
         navigate("/gv80");
-    }
-    // navigate("/gv80")
-  }
+    };
+
+  };
   console.log("its all", isAll, isSedan, isSuv);
   console.log(menuSlide);
   return (
@@ -135,9 +133,9 @@ const MenuSlide = () => {
       <ModelBox>
         <h4>모델</h4>
         <ModelSelecBox>
-          <span onClick={handleClick}>ALL</span>
-          <span onClick={handleClick}>SEDAN</span>
-          <span onClick={handleClick}>SUV</span>
+          <Span1 all={isAll} onClick={handleClick}>ALL</Span1>
+          <Span2 sedan={isSedan} onClick={handleClick}>SEDAN</Span2>
+          <Span3 suv={isSuv} onClick={handleClick}>SUV</Span3>
         </ModelSelecBox>
       </ModelBox>
       <MoblieBox>
@@ -219,49 +217,58 @@ const MenuSlide = () => {
 
 const Wrap = styled.div`
   width: 100%;
-  /* height: 93vh; */
-  /* height: 70vh; */
-  height:${(props) => (props.next ? "70vh" : "93vh")};;
-  /* margin-top: -200vh; */
-  /* margin-top: 70px; */
-  margin-top: ${(props) => (props.slide ? "70px" : "-200vh")};
+  height:${(props) => (props.next ? "70vh" : "100vh")};;
+  margin-top: ${(props) => (props.slide ? "90px" : "-200vh")};
   background-color: #151515;
-  /* background-color: blue; */
   position: absolute;
   z-index: 2;
   transition: 0.7s;
   display: flex;
+  border-top: 0.5px solid #3b3b3b;
+  border-bottom: 0.5px solid #3b3b3b;
 `;
 const ModelBox = styled.div`
   width: 16.5%;
   height: 90vh;
   border: 1px solid red;
-  padding: 70px 25px;
+  padding: 90px 0px 100px 100px;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  /* align-items: center; */
   justify-content: start;
-
   color: #fff;
-  font-size: 17px;
+  font-size: 20px;
   letter-spacing: 1px;
   font-weight: 500;
   h4 {
-    margin-right: 20px;
+    /* margin-right: 23px; */
   }
 `;
 
 const ModelSelecBox = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: start;
-  /* align-items: center; */
   margin-top: 20px;
   span {
-    margin-top: 15px;
+    margin-top: 25px;
     cursor: pointer;
+    font-size: 22px;
+    :hover{
+      opacity: 1;
+    }
   }
 `;
+
+const Span1 = styled.span`
+  opacity: ${(props) => (props.all ? "1" : "0.7")};
+`
+const Span2 = styled.span`
+  opacity: ${(props) => (props.sedan ? "1" : "0.7")};
+
+`
+const Span3 = styled.span`
+  opacity: ${(props) => (props.suv ? "1" : "0.7")};
+`
 
 const MoblieBox = styled.div`
   width: 90%;

@@ -79,9 +79,9 @@ const MainSlide = () => {
               }}
             >
               <ul> {dots} </ul>
-              {isAutoPlay ? 
+              {/* {isAutoPlay ? 
               (<PauseIcon onClick={()=>{setIsAutoPlay((prev)=>!prev)}}/>) 
-              : (<PlayIcon onClick={()=>{setIsAutoPlay((prev)=>!prev)}}/>)}
+              : (<PlayIcon onClick={()=>{setIsAutoPlay((prev)=>!prev)}}/>)} */}
               
             </div>
           ),
@@ -89,8 +89,8 @@ const MainSlide = () => {
     };
    
     return(
-    <>
-    <SliderImg {...settings}>
+    <Wrap>
+    <SliderImg>
         {carList.map((i,idx)=>(
             <ImgBox>
               <Img src={i.img}/>
@@ -102,13 +102,21 @@ const MainSlide = () => {
             </ImgBox>
         ))} 
     </SliderImg>
-    </>
+    </Wrap>
     );
 };
 
+const Wrap = styled.div`
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  display: flex;
+  flex-direction: column;
+`
+
 const ImgBox = styled.div`
     width: 100%;
-    height: 100vh;
+    height: 100%;
     background-size: cover;
     border: 3px solid red;
     font-size: 0;
@@ -129,6 +137,7 @@ const Img = styled.img`
     background-size: cover;
     font-size: 0;
     position: relative;
+    object-fit: cover;
     /* box-shadow: 5px 5px 10px black; */
     /* position: ""; */
 `

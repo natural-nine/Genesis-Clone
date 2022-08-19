@@ -1,8 +1,13 @@
 
 import {atom} from "recoil";
 
-export const openMenu = atom({
-    key:"dialog",
+export const openModelMenu = atom({
+    key:"model",
+    default:false,
+});
+
+export const openBrandMenu = atom({
+    key:"brand",
     default:false,
 });
 

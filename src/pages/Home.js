@@ -1,20 +1,19 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import BrandMenuSlide from "../components/BrandMenuSlide";
 import Header from "../components/Header";
 import MainSlide from "../components/MainSlide";
 import MenuSlide from "../components/MenuSlide";
-import ModelDialog from "../components/ModelDialog";
+
 
 const Home = () => {
 
     return(
     <Wrap>
-    <Header/>
-    <MenuSlide/>
+        <Header/>
+        <MenuSlide/>
+        <BrandMenuSlide/>
     {/* <MainSlide/> */}
-    
-    {/* <ModelDialog/> */}
-    {/* <MenuSlide/> */}
     </Wrap>
     );
 };
