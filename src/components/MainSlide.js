@@ -66,7 +66,7 @@ const MainSlide = () => {
         slidesToShow: 1,
         slidesToScroll: 1,
         dots: true,
-        autoplay: isAutoPlay,
+        // autoplay: isAutoPlay,
         appendDots: (dots) => (
             <div
               style={{
@@ -90,7 +90,7 @@ const MainSlide = () => {
    
     return(
     <Wrap>
-    <SliderImg>
+    <SliderImg {...settings}>
         {carList.map((i,idx)=>(
             <ImgBox>
               <Img src={i.img}/>
@@ -112,14 +112,21 @@ const Wrap = styled.div`
   object-fit: cover;
   display: flex;
   flex-direction: column;
+  overflow-x: hidden;
 `
 
 const ImgBox = styled.div`
-    width: 100%;
+    width: auto;
     height: 100%;
-    background-size: cover;
-    border: 3px solid red;
-    font-size: 0;
+    /* background-size: cover; */
+    background-color: #111;
+    background-image: linear-gradient(to right, 
+            rgba(20, 20, 20, 0) 10%,
+            rgba(20, 20, 20, 0.25) 25%,
+            rgba(20, 20, 20, 0.5) 50%,
+            rgba(20, 20, 20, 0.75) 75%,
+            rgba(20, 20, 20, 1) 100%)
+            ;
 `
 
 const DesBox = styled.div`
@@ -129,17 +136,17 @@ const DesBox = styled.div`
   bottom: 100px;
   transition: 0.4s;
   color: blue;
+  /* width: 10%; 
+  height: 150px; */
+  border: 2px solid red;
 `
 
 const Img = styled.img`
     width: 100%;
     height: 100vh;
-    background-size: cover;
-    font-size: 0;
-    position: relative;
     object-fit: cover;
-    /* box-shadow: 5px 5px 10px black; */
-    /* position: ""; */
+    opacity: 0.8;
+    /* filter: contrast(110%); */
 `
 
 
@@ -158,7 +165,6 @@ const PauseIcon = styled(FaPause)`
 `
 
 const SliderImg = styled(Slider)`
-  width: 100%;
   .dots_custom {
     display: inline-block;
     vertical-align: middle;

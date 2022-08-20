@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 import BrandMenuSlide from "../components/BrandMenuSlide";
 import Header from "../components/Header";
@@ -13,7 +13,7 @@ const Home = () => {
         <Header/>
         <MenuSlide/>
         <BrandMenuSlide/>
-    {/* <MainSlide/> */}
+        <MainSlide/>
     </Wrap>
     );
 };

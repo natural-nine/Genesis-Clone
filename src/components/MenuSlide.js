@@ -83,7 +83,7 @@ const MenuSlide = () => {
         img: gv70Elec,
         elec: "",
         des: "",
-        ev: "ev",
+        ev: ev,
     },
     {
         id: 7,
@@ -120,16 +120,14 @@ const MenuSlide = () => {
     };
   };
   const handleCarClick = (e) => {
-    if(e.target.parentElement.firstChild.children[0].innerHTML === "GV80"){
+    if(e.target.parentElement.firstChild.children[0].innerText === "GV80"){
         setMenuSlide(false);
         navigate("/gv80");
     };
-
+    // console.log(e)
   };
-  console.log("its all", isAll, isSedan, isSuv);
-  console.log(menuSlide);
   return (
-    <Wrap slide={menuSlide} next={isNext}>
+    <Wrap slide={menuSlide} next={isNext} style={{"height" : isSedan || isSuv ? "100vh" : ""}}>
       <ModelBox>
         <h4>모델</h4>
         <ModelSelecBox>
@@ -139,76 +137,106 @@ const MenuSlide = () => {
         </ModelSelecBox>
       </ModelBox>
       <MoblieBox>
-            {isAll && isNext && (<IconBox>
+            {isAll && isNext && (
+            <LeftIconBox>
             <LeftIcon
               onClick={() => {
                 setIsNext((prev) => !prev);
               }}
             />
-          </IconBox>)}
+          </LeftIconBox>)}
         <MobileWrapBox>
             
             {isAll && !isNext &&  (<> {allCar.slice(0,6).map((i, idx) => (
             <MobileSelectBox key={i.id}>
               <CarNameBox>
-                <span>{i.name}</span>
-                <span></span>
+                <div>
+                  <DesSpan2>{i.elec}</DesSpan2>
+                  <p>{i.name}</p>
+                  <DesSpan1>{i.des}</DesSpan1>
+                </div>
+                
+                {i.ev &&(<img src={i.ev}/>)}
               </CarNameBox>
               <CarImg src={i.img} />
               <CarDetail onClick={handleCarClick}>자세히보기</CarDetail>
-              <h3>견적 내기</h3>
-              <h3>시승 신청</h3>
+              <EtcBox>
+                <span>견적 내기</span>
+                <span>시승 신청</span>
+              </EtcBox>
             </MobileSelectBox>
           ))}</>)}
           {isAll && isNext && (<> {allCar.slice(6).map((i, idx) => (
             <MobileSelectBox key={i.id}>
               <CarNameBox>
-                <span>{i.name}</span>
-                <span></span>
+                <div>
+                  <DesSpan2>{i.elec}</DesSpan2>
+                  <p>{i.name}</p>
+                  <DesSpan1>{i.des}</DesSpan1>
+                </div>
+                {i.ev &&(<img src={i.ev}/>)}
               </CarNameBox>
               <CarImg src={i.img} />
               <CarDetail onClick={handleCarClick}>자세히보기</CarDetail>
-              <h3>견적 내기</h3>
-              <h3>시승 신청</h3>
+              <EtcBox>
+                <span>견적 내기</span>
+                <span>시승 신청</span>
+              </EtcBox>
             </MobileSelectBox>
           ))}</>)}
          {isSedan && (<>
             {allCar.slice(0,5).map((i, idx) => (
             <MobileSelectBox key={i.id}>
               <CarNameBox>
-                <span>{i.name}</span>
-                <span></span>
+                <div>
+                <DesSpan2>{i.elec}</DesSpan2>
+                  <p>{i.name}</p>
+                  <DesSpan1>{i.des}</DesSpan1>
+                </div>
+                {i.ev &&(<img src={i.ev}/>)}
               </CarNameBox>
               <CarImg src={i.img} />
               <CarDetail onClick={handleCarClick}>자세히보기</CarDetail>
-              <h3>견적 내기</h3>
-              <h3>시승 신청</h3>
+              <EtcBox>
+                <span>견적 내기</span>
+                <span>시승 신청</span>
+              </EtcBox>
             </MobileSelectBox>
           ))}
+            
          </>)}
          {isSuv && (
          <>
             {allCar.slice(5).map((i, idx) => (
             <MobileSelectBox key={i.id}>
               <CarNameBox>
-                <span>{i.name}</span>
-                <span></span>
+                <div>
+                <DesSpan2>{i.elec}</DesSpan2>
+                  <p>{i.name}</p>
+                  <DesSpan1>{i.des}</DesSpan1>
+                </div>
+                {i.ev &&(<img src={i.ev}/>)}
+                
               </CarNameBox>
               <CarImg src={i.img} />
               <CarDetail onClick={handleCarClick}>자세히보기</CarDetail>
-              <h3>견적 내기</h3>
-              <h3>시승 신청</h3>
+              <EtcBox>
+                <span>견적 내기</span>
+                <span>시승 신청</span>
+              </EtcBox>
+              
             </MobileSelectBox>
           ))}
          </>)}
         </MobileWrapBox>
-        {isAll && !isNext && (<IconBox>
+        {isAll && !isNext && (
+        <RigthIconBox>
             <RigthIcon
               onClick={() => {
                 setIsNext((prev) => !prev);
               }}
             />
-          </IconBox>)}
+          </RigthIconBox>)}
     
       </MoblieBox>
     </Wrap>
@@ -222,27 +250,23 @@ const Wrap = styled.div`
   background-color: #151515;
   position: absolute;
   z-index: 2;
-  transition: 0.7s;
+  transition: 0.6s;
   display: flex;
   border-top: 0.5px solid #3b3b3b;
   border-bottom: 0.5px solid #3b3b3b;
+  
 `;
 const ModelBox = styled.div`
   width: 16.5%;
   height: 90vh;
-  border: 1px solid red;
-  padding: 90px 0px 100px 100px;
+  padding: 70px 0px 100px 120px;
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
   justify-content: start;
   color: #fff;
-  font-size: 20px;
+  font-size: 17px;
   letter-spacing: 1px;
   font-weight: 500;
-  h4 {
-    /* margin-right: 23px; */
-  }
 `;
 
 const ModelSelecBox = styled.div`
@@ -273,72 +297,144 @@ const Span3 = styled.span`
 const MoblieBox = styled.div`
   width: 90%;
   height: 90vh;
-  border: 3px solid yellow;
   display: flex;
-  /* flex-wrap: wrap; */
   align-items: center;
   padding: 40px 120px;
   justify-content: space-between;
+  position: relative;
 `;
 
 const MobileWrapBox = styled.div`
   width: 100%;
   height: 85vh;
-  border: 3px solid red;
   display: flex;
   flex-wrap: wrap;
+
+  justify-content: space-between;
+  
 `;
 
 const MobileSelectBox = styled.div`
-  width: 22.8%;
-  /* height: 392px; */
-  height: 40vh;
-  border: 1px solid red;
+  width: 20.5%;
+  height: 35vh;
   margin: 10px 50px;
   display: flex;
-  /* justify-content: center; */
   flex-direction: column;
+  padding: 0px 14px;
   h3 {
     color: #fff;
   }
 `;
 const CarNameBox = styled.div`
-  width: 81.1%;
+  width: 100%;
   display: flex;
   justify-content: space-between;
-  span {
-    color: #fff;
+  color: #fff;
+  margin-top: 15px;
+  position: relative;
+  /* span{
+    position: absolute;
+    top: 100%;
+  } */
+  div{
+    display: flex;
+    flex-direction: column;
+    opacity: 0.7;
+    P{
+      font-size: 25px;
+    }
+  }
+  img{
+    width: 7.8%;
+    height: 2.22vh;
   }
 `;
 
+const DesSpan1 = styled.span`
+  position: absolute;
+  top: 100%;
+`
+
+const DesSpan2 = styled.span`
+  position: absolute;
+  top: -50%;
+`
 const CarDetail = styled.div`
-  width: 81.1%;
+  width: 100%;
   height: 50px;
   border: 1px solid #fff;
   background-color: #151515;
   color: #fff;
   cursor: pointer;
-  :hover {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  margin-top: 50px;
+  ::before{
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
     background-color: #fff;
-    transition: 0.3s;
-    color: #111;
+    right: 100%;
+    bottom: 0;
+    transition: 0.4s;
+    z-index: -1;
+  }
+  :hover::before{
+    transform: translateX(100%);
+
+  }
+  :hover{
+    color: black;
+    z-index: 2;
   }
 `;
 
 const CarImg = styled.img`
-  width: 80%;
+  width: 100%;
   height: 91px;
+  margin-top: 30px;
 `;
-const IconBox = styled.div`
+const RigthIconBox = styled.div`
   color: #fff;
-  font-size: 50px;
-`;
+  font-size: 45px;
+  position: absolute;
+  right: 90px;
+  font-weight: lighter;
+`
+
+const LeftIconBox = styled.div`
+  color: #fff;
+  font-size: 45px;
+  position: absolute;
+  left: 90px;
+  font-weight: lighter;
+`
+
 const RigthIcon = styled(FaChevronRight)`
   cursor: pointer;
+  opacity: 0.5;
 `;
 
 const LeftIcon = styled(FaChevronLeft)`
   cursor: pointer;
+  opacity:0.5;
 `;
+
+const EtcBox = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+  letter-spacing: 1px; 
+  font-size: 14px;
+  /* font-weight: lighter; */
+  color: #fff;
+  span{
+    margin-top: 5px;
+  }
+`
 
 export default MenuSlide;

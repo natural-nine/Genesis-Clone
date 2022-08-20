@@ -4,7 +4,7 @@ import gv80 from "../images/gv80-2.webp";
 const AutoMobileImg = () => {
     return(
     <Wrap>
-        <Img src={gv80}/>
+       <Img src={gv80}/>
         <DesBox></DesBox>
     </Wrap>
     );
@@ -17,13 +17,15 @@ const Wrap = styled.div`
     /* background-color: red; */
     display: flex;
     /* background: linear-gradient(to left, #333, #333 50%, #eee 75%, #333 75%); */
-    background: linear-gradient(to right,
+    /* background-color: black; */
+    background: linear-gradient(to left,
             rgba(20, 20, 20, 0) 10%,
             rgba(20, 20, 20, 0.25) 25%,
             rgba(20, 20, 20, 0.5) 50%,
             rgba(20, 20, 20, 0.75) 75%,
-            rgba(20, 20, 20, 1) 100%);
-            
+            rgba(20, 20, 20, 20) 100%);
+    background-color: #111;
+    
 `
 
 const DesBox = styled.div`
@@ -38,12 +40,7 @@ const Img = styled.img`
     width: 100%;
     height: 100%;
     /* background: linear-gradient(to right, #333, #333 50%, #eee 75%, #333 75%); */
-    background: linear-gradient(to right,
-            rgba(20, 20, 20, 0) 10%,
-            rgba(20, 20, 20, 0.25) 25%,
-            rgba(20, 20, 20, 0.5) 50%,
-            rgba(20, 20, 20, 0.75) 75%,
-            rgba(20, 20, 20, 1) 100%);
+    opacity: 0.7;
 `
 
 
