@@ -81,7 +81,7 @@ const MenuSlide = () => {
         id: 6,
         name: "GV70",
         img: gv70Elec,
-        elec: "",
+        elec: "ELECTRIFIED",
         des: "",
         ev: ev,
     },
@@ -211,7 +211,7 @@ const MenuSlide = () => {
             <MobileSelectBox key={i.id}>
               <CarNameBox>
                 <div>
-                <DesSpan2>{i.elec}</DesSpan2>
+                  <DesSpan2>{i.elec}</DesSpan2>
                   <p>{i.name}</p>
                   <DesSpan1>{i.des}</DesSpan1>
                 </div>
