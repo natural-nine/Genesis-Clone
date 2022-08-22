@@ -24,7 +24,7 @@ const NightStar = () => {
 
 const Wrap = styled.div`
     width: 100%;
-    height: 85vh;
+    height: 100vh;
     margin-top: 150px;
     display: flex;
     background-color: #111;
@@ -73,6 +73,7 @@ const TestBox2 = styled.div`
     margin-top: 20px;
     p{
         font-size: 30px;
+        font-weight: 300;
     }
 `
 export default NightStar;

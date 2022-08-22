@@ -161,8 +161,14 @@ const MenuSlide = () => {
               <CarImg src={i.img} />
               <CarDetail onClick={handleCarClick}>자세히보기</CarDetail>
               <EtcBox>
-                <span>견적 내기</span>
-                <span>시승 신청</span>
+              <div>
+                  <span>견적 내기</span>
+                  <EtcIcon/>
+                </div>
+                <div>
+                  <span>시승 신청</span>
+                  <EtcIcon/>
+                </div>
               </EtcBox>
             </MobileSelectBox>
           ))}</>)}
@@ -179,8 +185,14 @@ const MenuSlide = () => {
               <CarImg src={i.img} />
               <CarDetail onClick={handleCarClick}>자세히보기</CarDetail>
               <EtcBox>
-                <span>견적 내기</span>
-                <span>시승 신청</span>
+              <div>
+                  <span>견적 내기</span>
+                  <EtcIcon/>
+                </div>
+                <div>
+                  <span>시승 신청</span>
+                  <EtcIcon/>
+                </div>
               </EtcBox>
             </MobileSelectBox>
           ))}</>)}
@@ -198,8 +210,14 @@ const MenuSlide = () => {
               <CarImg src={i.img} />
               <CarDetail onClick={handleCarClick}>자세히보기</CarDetail>
               <EtcBox>
-                <span>견적 내기</span>
-                <span>시승 신청</span>
+              <div>
+                  <span>견적 내기</span>
+                  <EtcIcon/>
+                </div>
+                <div>
+                  <span>시승 신청</span>
+                  <EtcIcon/>
+                </div>
               </EtcBox>
             </MobileSelectBox>
           ))}
@@ -221,8 +239,14 @@ const MenuSlide = () => {
               <CarImg src={i.img} />
               <CarDetail onClick={handleCarClick}>자세히보기</CarDetail>
               <EtcBox>
-                <span>견적 내기</span>
-                <span>시승 신청</span>
+                <div>
+                  <span>견적 내기</span>
+                  <EtcIcon/>
+                </div>
+                <div>
+                  <span>시승 신청</span>
+                  <EtcIcon/>
+                </div>
               </EtcBox>
               
             </MobileSelectBox>
@@ -310,14 +334,15 @@ const MobileWrapBox = styled.div`
   display: flex;
   flex-wrap: wrap;
 
-  justify-content: space-between;
   
 `;
 
 const MobileSelectBox = styled.div`
   width: 20.5%;
-  height: 35vh;
-  margin: 10px 50px;
+  /* height: 38vh; */
+  /* margin: 10px 50px; */
+  margin: 10px 10px 10px 110px;
+  /* margin-right: 12%; */
   display: flex;
   flex-direction: column;
   padding: 0px 14px;
@@ -332,10 +357,6 @@ const CarNameBox = styled.div`
   color: #fff;
   margin-top: 15px;
   position: relative;
-  /* span{
-    position: absolute;
-    top: 100%;
-  } */
   div{
     display: flex;
     flex-direction: column;
@@ -402,7 +423,7 @@ const RigthIconBox = styled.div`
   color: #fff;
   font-size: 45px;
   position: absolute;
-  right: 90px;
+  right: 7%;
   font-weight: lighter;
 `
 
@@ -410,7 +431,7 @@ const LeftIconBox = styled.div`
   color: #fff;
   font-size: 45px;
   position: absolute;
-  left: 90px;
+  left: 7%;
   font-weight: lighter;
 `
 
@@ -424,14 +445,24 @@ const LeftIcon = styled(FaChevronLeft)`
   opacity:0.5;
 `;
 
+const EtcIcon = styled(FaChevronRight)`
+  margin-top: 3px;
+`
+
 const EtcBox = styled.div`
   display: flex;
   flex-direction: column;
-  margin-top: 10px;
+  margin: 5px 0px 5px 0px;
   letter-spacing: 1px; 
   font-size: 14px;
   /* font-weight: lighter; */
   color: #fff;
+  div{
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+    /* align-items: center; */
+  }
   span{
     margin-top: 5px;
   }

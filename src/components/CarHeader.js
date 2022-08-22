@@ -4,7 +4,6 @@ import { FaChevronCircleDown } from "react-icons/fa";
 
 const CarHeader = () => {
   const highlightList = [
-    "하이라이트",
     "디자인",
     "안전",
     "테크놀로지",
@@ -18,8 +17,11 @@ const CarHeader = () => {
       <FirstBox>
         <NameBox>GV80</NameBox>
         <DesBox>
+          <div>하이라이트</div>
           {highlightList.map((i, idx) => (
-            <span key={idx}>{i}</span>
+            <div>
+              <span key={idx}>{i}</span>
+            </div>
           ))}
         </DesBox>
       </FirstBox>
@@ -35,7 +37,7 @@ const CarHeader = () => {
 
 const Wrap = styled.div`
   width: 100%;
-  height: 75px;
+  height: 6vh;
   top: 90px;
   background-color: #151515;
   display: flex;
@@ -48,14 +50,12 @@ const Wrap = styled.div`
   border-bottom: 0.5px solid #3b3b3b;
 `;
 const FirstBox = styled.div`
-  border: 2px solid red;
-  width: 60%;
+  width: 80%;
   height: 100%;
   display: flex;
 `;
 
 const NameBox = styled.div`
-  border: 1px solid green;
   color: #fff;
   display: flex;
   align-items: center;
@@ -65,34 +65,37 @@ const NameBox = styled.div`
 `;
 
 const DesBox = styled.div`
-  border: 1px solid yellow;
   color: #fff;
   width: 100%;
   display: flex;
   align-items: center;
-  margin-left: 30px;
-  height: 100%;
-  /* justify-content: end; */
-  /* font-size: 1.3rem; */
-  span:first-child {
-    opacity: 1;
-    /* border: 1px solid yellow; */
+  margin-left: 10px;
+  justify-content: start;
+  div:first-child{
+    margin-right: 30px;
+    border-bottom:4px solid #fff;
   }
+ div{
+  height: 153%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   span {
     cursor: pointer;
-    margin-left: 30px;
+    margin-right: 30px;
     opacity: 0.7;
-    font-size: 15px;
+    font-size: 1em;
     :hover {
       transition: 0.4s;
       opacity: 1;
     }
   }
+ }
+  
 `;
 
 const SecondBox = styled.div`
-  border: 2px solid blue;
-  width: 40%;
+  width: 20%;
   height: 100%;
   margin-right: 20px;
   display: flex;

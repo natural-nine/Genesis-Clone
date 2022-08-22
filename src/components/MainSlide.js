@@ -2,16 +2,18 @@ import React, { useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import g70 from "../images/g70-shooting.webp"
-import g90 from "../images/g90.webp"
-import futuringGenesis from "../images/futuring-genesis.webp"
-import gv60 from "../images/gv60.webp"
-import gv70Elec from "../images/gv70-elec.webp"
-import gv70 from "../images/gv70.webp"
+import g70 from "../images/11.webp"
+import g90 from "../images/44.webp"
+import futuringGenesis from "../images/66.webp"
+import gv60 from "../images/55.webp"
+import gv70Elec from "../images/33.webp"
+import gv70 from "../images/22.webp"
+import g80 from "../images/77.webp"
 import styled from "styled-components";
 import {FaPlay,FaPause} from "react-icons/fa"
 import { useRecoilState } from "recoil";
 import { playSlide } from "../recoil/atoms";
+import {FaChevronRight} from "react-icons/fa"
 
 const MainSlide = () => {
     const [isAutoPlay, setIsAutoPlay] = useRecoilState(playSlide)
@@ -58,6 +60,13 @@ const MainSlide = () => {
         des:"",
         img:futuringGenesis
       },
+      {
+        id:6,
+        brand:"ELECTRIFIED",
+        name:"G80",
+        des:"전기차 그 이상의 시작",
+        img:g80
+      },
     ]
 
     const settings = {
@@ -98,10 +107,22 @@ const MainSlide = () => {
                 <span>{i.brand}</span>
                 <span>{i.name}</span>
                 <span>{i.des}</span>
-              </DesBox>       
+              </DesBox>     
+              <LineBox/>  
+              <LineBox2/>
             </ImgBox>
         ))} 
     </SliderImg>
+    <EtcBox>
+      <div>
+        <span>더 알아보기</span>
+        <RigthIcon/>
+      </div>
+      <div>
+        <span>영상보기</span>
+        <RigthIcon/>
+      </div>
+    </EtcBox>
     </Wrap>
     );
 };
@@ -109,44 +130,52 @@ const MainSlide = () => {
 const Wrap = styled.div`
   width: 100%;
   height: 100vh;
-  object-fit: cover;
+  /* object-fit: cover; */
   display: flex;
   flex-direction: column;
   overflow-x: hidden;
+  position: relative;
 `
 
 const ImgBox = styled.div`
-    width: auto;
+    width: 100%;
     height: 100%;
+    object-fit: cover;
     /* background-size: cover; */
-    background-color: #111;
-    background-image: linear-gradient(to right, 
-            rgba(20, 20, 20, 0) 10%,
-            rgba(20, 20, 20, 0.25) 25%,
-            rgba(20, 20, 20, 0.5) 50%,
-            rgba(20, 20, 20, 0.75) 75%,
-            rgba(20, 20, 20, 1) 100%)
-            ;
+    /* background-color: #111; */
+  
 `
 
 const DesBox = styled.div`
   display: flex;
   flex-direction: column;
   position: absolute;
-  bottom: 100px;
+  top:15%;
+  z-index: 3;
   transition: 0.4s;
-  color: blue;
-  /* width: 10%; 
-  height: 150px; */
-  border: 2px solid red;
+  margin-left: 1.1%;
+  color: #fff;
+  span{
+    margin-top: 5px;
+  }
+  span:first-child{
+    font-size: 2.2rem;
+    font-weight: 200;
+  }
+  span:nth-child(2){
+    font-size: 4rem;
+  }
+  span:last-child{
+    font-size: 1.8rem;
+    font-weight: 200;
+  }
 `
 
 const Img = styled.img`
     width: 100%;
     height: 100vh;
     object-fit: cover;
-    opacity: 0.8;
-    /* filter: contrast(110%); */
+    background-size: cover;
 `
 
 
@@ -194,4 +223,37 @@ const SliderImg = styled(Slider)`
     background-color: #fff;
   }
 `;
+
+const EtcBox = styled.div`
+  width: 20%;
+  position: absolute;
+  bottom:150px;
+  left: 15%;
+  color: #fff;
+  display: flex;
+  div{
+    display: flex;
+    font-size: 1rem;
+    margin-right: 30px;
+    cursor: pointer;
+  }
+`
+const RigthIcon = styled(FaChevronRight)`
+    margin-left: 5px;
+`
+
+const LineBox = styled.div`
+  width: 1.2%;
+  height: 3px;
+  position:absolute;
+  bottom: 46%;
+  background-color: #fff;
+`
+const LineBox2 = styled.div`
+  width: 1.2%;
+  height: 3px;
+  position:absolute;
+  bottom: 40%;
+  background-color: #fff;
+`
 export default MainSlide;
