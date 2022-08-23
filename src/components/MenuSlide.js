@@ -146,7 +146,6 @@ const MenuSlide = () => {
             />
           </LeftIconBox>)}
         <MobileWrapBox>
-            
             {isAll && !isNext &&  (<> {allCar.slice(0,6).map((i, idx) => (
             <MobileSelectBox key={i.id}>
               <CarNameBox>
@@ -155,7 +154,6 @@ const MenuSlide = () => {
                   <p>{i.name}</p>
                   <DesSpan1>{i.des}</DesSpan1>
                 </div>
-                
                 {i.ev &&(<img src={i.ev}/>)}
               </CarNameBox>
               <CarImg src={i.img} />
@@ -197,7 +195,7 @@ const MenuSlide = () => {
             </MobileSelectBox>
           ))}</>)}
          {isSedan && (<>
-            {allCar.slice(0,5).map((i, idx) => (
+            {allCar.slice(0,3).map((i, idx) => (
             <MobileSelectBox key={i.id}>
               <CarNameBox>
                 <div>
@@ -221,7 +219,54 @@ const MenuSlide = () => {
               </EtcBox>
             </MobileSelectBox>
           ))}
-            
+            {allCar.slice(3,5).map((i, idx) => (
+            <MobileSelectBox key={i.id}>
+              <CarNameBox>
+                <div>
+                <DesSpan2>{i.elec}</DesSpan2>
+                  <p>{i.name}</p>
+                  <DesSpan1>{i.des}</DesSpan1>
+                </div>
+                {i.ev &&(<img src={i.ev}/>)}
+              </CarNameBox>
+              <CarImg src={i.img} />
+              <CarDetail onClick={handleCarClick}>자세히보기</CarDetail>
+              <EtcBox>
+              <div>
+                  <span>견적 내기</span>
+                  <EtcIcon/>
+                </div>
+                <div>
+                  <span>시승 신청</span>
+                  <EtcIcon/>
+                </div>
+              </EtcBox>
+            </MobileSelectBox>
+          ))}
+          {allCar.slice(5,6).map((i, idx) => (
+            <MobileSelectBox style={{"visibility":"hidden"}} key={i.id}>
+              <CarNameBox>
+                <div>
+                <DesSpan2>{i.elec}</DesSpan2>
+                  <p>{i.name}</p>
+                  <DesSpan1>{i.des}</DesSpan1>
+                </div>
+                {i.ev &&(<img src={i.ev}/>)}
+              </CarNameBox>
+              <CarImg src={i.img} />
+              <CarDetail onClick={handleCarClick}>자세히보기</CarDetail>
+              <EtcBox>
+              <div>
+                  <span>견적 내기</span>
+                  <EtcIcon/>
+                </div>
+                <div>
+                  <span>시승 신청</span>
+                  <EtcIcon/>
+                </div>
+              </EtcBox>
+            </MobileSelectBox>
+          ))}
          </>)}
          {isSuv && (
          <>
@@ -333,7 +378,7 @@ const MobileWrapBox = styled.div`
   height: 85vh;
   display: flex;
   flex-wrap: wrap;
-
+  justify-content: space-between;
   
 `;
 
@@ -341,8 +386,7 @@ const MobileSelectBox = styled.div`
   width: 20.5%;
   /* height: 38vh; */
   /* margin: 10px 50px; */
-  margin: 10px 10px 10px 110px;
-  /* margin-right: 12%; */
+  margin: 10px 60px 10px 60px;
   display: flex;
   flex-direction: column;
   padding: 0px 14px;
@@ -423,7 +467,7 @@ const RigthIconBox = styled.div`
   color: #fff;
   font-size: 45px;
   position: absolute;
-  right: 7%;
+  right: 5%;
   font-weight: lighter;
 `
 
@@ -431,7 +475,7 @@ const LeftIconBox = styled.div`
   color: #fff;
   font-size: 45px;
   position: absolute;
-  left: 7%;
+  left: 5%;
   font-weight: lighter;
 `
 

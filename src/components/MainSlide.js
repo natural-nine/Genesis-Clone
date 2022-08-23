@@ -134,6 +134,7 @@ const Wrap = styled.div`
   display: flex;
   flex-direction: column;
   overflow-x: hidden;
+  overflow-y: hidden;
   position: relative;
 `
 
@@ -141,8 +142,7 @@ const ImgBox = styled.div`
     width: 100%;
     height: 100%;
     object-fit: cover;
-    /* background-size: cover; */
-    /* background-color: #111; */
+    background-size: cover;
   
 `
 

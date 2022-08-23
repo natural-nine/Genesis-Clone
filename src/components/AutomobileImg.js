@@ -28,7 +28,7 @@ const AutoMobileImg = () => {
 
 const Wrap = styled.div`
     width: 100%;
-    height: 86vh;
+    height: 90vh;
     overflow-y: hidden;
     margin-top: 130px;
     /* background-color: red; */
