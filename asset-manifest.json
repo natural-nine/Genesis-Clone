@@ -1,0 +1,39 @@
+{
+  "files": {
+    "main.css": "/Genesis-Clone/static/css/main.e87d6908.css",
+    "main.js": "/Genesis-Clone/static/js/main.9028ef37.js",
+    "static/js/787.d760d1ce.chunk.js": "/Genesis-Clone/static/js/787.d760d1ce.chunk.js",
+    "static/media/별이있는밤하늘.mp4": "/Genesis-Clone/static/media/별이있는밤하늘.02854e1d137b693231d0.mp4",
+    "static/media/55.webp": "/Genesis-Clone/static/media/55.262730c1392d10a91d3c.webp",
+    "static/media/gv80-2.webp": "/Genesis-Clone/static/media/gv80-2.4251ad23b7b3ebe192ec.webp",
+    "static/media/44.webp": "/Genesis-Clone/static/media/44.f0fe0d0b8b9e9f52ab0b.webp",
+    "static/media/33.webp": "/Genesis-Clone/static/media/33.883af003e3db22bf826b.webp",
+    "static/media/22.webp": "/Genesis-Clone/static/media/22.619d1d97f3e480c652e6.webp",
+    "static/media/66.webp": "/Genesis-Clone/static/media/66.7ebf660b9a277f6408e6.webp",
+    "static/media/11.webp": "/Genesis-Clone/static/media/11.11f8dde2df6335b74852.webp",
+    "static/media/77.webp": "/Genesis-Clone/static/media/77.26d1983a564feff0cc25.webp",
+    "static/media/menu-g80-elec.webp": "/Genesis-Clone/static/media/menu-g80-elec.0d3ff56a69ff3b82bf78.webp",
+    "static/media/menu-gv70.webp": "/Genesis-Clone/static/media/menu-gv70.7d0d582cca0db3222923.webp",
+    "static/media/menu-gv70-elec.webp": "/Genesis-Clone/static/media/menu-gv70-elec.e0697d6c8f031c7d3b86.webp",
+    "static/media/menu-g80.webp": "/Genesis-Clone/static/media/menu-g80.9bab7da43d2968643015.webp",
+    "static/media/menu-g70.webp": "/Genesis-Clone/static/media/menu-g70.d9ca46da6d938c78cd57.webp",
+    "static/media/menu-gv60.webp": "/Genesis-Clone/static/media/menu-gv60.46a0008e91f26b7505a2.webp",
+    "static/media/menu-gv80.webp": "/Genesis-Clone/static/media/menu-gv80.1f44d58f1c9e814ce91e.webp",
+    "static/media/menu-g70-shooting.webp": "/Genesis-Clone/static/media/menu-g70-shooting.153fdf0a7edb5fab3009.webp",
+    "static/media/menu-g90.webp": "/Genesis-Clone/static/media/menu-g90.c779573cbd747c572acb.webp",
+    "static/media/slick.svg": "/Genesis-Clone/static/media/slick.2630a3e3eab21c607e21.svg",
+    "static/media/slick.eot": "/Genesis-Clone/static/media/slick.a4e97f5a2a64f0ab1323.eot",
+    "static/media/genesis-logo.webp": "/Genesis-Clone/static/media/genesis-logo.da34a7b0300299f753f2.webp",
+    "static/media/slick.ttf": "/Genesis-Clone/static/media/slick.c94f7671dcc99dce43e2.ttf",
+    "static/media/slick.woff": "/Genesis-Clone/static/media/slick.295183786cd8a1389865.woff",
+    "index.html": "/Genesis-Clone/index.html",
+    "static/media/menu-ev.webp": "/Genesis-Clone/static/media/menu-ev.d8be6428a5a5cdea66c0.webp",
+    "main.e87d6908.css.map": "/Genesis-Clone/static/css/main.e87d6908.css.map",
+    "main.9028ef37.js.map": "/Genesis-Clone/static/js/main.9028ef37.js.map",
+    "787.d760d1ce.chunk.js.map": "/Genesis-Clone/static/js/787.d760d1ce.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e87d6908.css",
+    "static/js/main.9028ef37.js"
+  ]
+}
